@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  #数据库连接配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/mybatis?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC #路径，时区默认utc
+    username: root
+    password: loverisqyj.
+
+#mybatis的相关配置
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.entity
+#mybatis-plus:
+  configuration:
+    mybatis-plus:configuration:log-impl=org:apache:ibatis:logging:stdout:StdOutImpl
+
+#
+#  #方法的路径
+#  #开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true

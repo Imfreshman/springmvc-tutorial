@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>person表</title>
+</head>
+<body style="text-align: center">
+<table width="100%" border="1">
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+
+    <tr th:each="per:${person}">
+        <td th:text="${per.id}">1</td>
+        <td th:text="${per.name}">2</td>
+        <td th:text="${per.age}">3</td>
+        <td th:text="${per.sex}">4</td>
+        <td>
+            <a th:href="@{'/fix/'+${per.id}}">修改</a>
+            <a th:href="@{'/delete/'+${per.id}}">删除</a>
+        </td>
+
+    </tr>
+</table>
+
+<a href="/addview">新增</a>
+</body>
+</html>

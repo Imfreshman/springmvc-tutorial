@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生表</title>
+</head>
+<body style="text-align: center">
+
+<table width="100%" border="1">
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>密码</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>住址</th>
+        <th>分数</th>
+        <th>操作</th>
+    </tr>
+
+    <tr th:each="stu:${student}">
+        <td th:text="${stu.sid}">1</td>
+        <td th:text="${stu.sname}">2</td>
+        <td th:text="${stu.password}">3</td>
+        <td th:text="${stu.ssex}">4</td>
+        <td th:text="${stu.sage}">5</td>
+        <td th:text="${stu.svillage}">6</td>
+        <td th:text="${stu.remark}">7</td>
+<!--        <td>-->
+<!--            <a th:href="@{'/student/fix/'+${stu.sid}}">修改</a>-->
+<!--            <a th:href="@{'/student/delete/?id='+${stu.sid}}">删除</a>-->
+<!--        </td>-->
+
+        <td>
+            <a th:href="@{'/student/fix/'+${stu.sid}}">修改</a>
+<!--            <a th:href="@{'/student/delete/?id='+${stu.sid}}">删除</a>-->
+            <a th:href="@{'/student/confirm/'+${stu.sid}}">删除</a>
+<!--            <a href="#" onclick="confirmDelete('@{/student/delete/}'+${stu.sid}")>删除</a>-->
+        </td>
+
+    </tr>
+</table>
+
+<a href="/student/addview">新增</a>
+
+<script>
+    function confirmDelete(url) {
+      if (confirm("确定要删除吗？")) {
+        // 用户点击了“确定”按钮，执行删除操作
+        // 使用 JavaScript 实现跳转，避免表单重复提交
+        window.location.href = url;
+      } else {
+        // 用户点击了“取消”按钮，取消删除操作
+         window.location.href ="/student/list";
+      }
+    }
+    </script>
+
+
+</body>
+</html>

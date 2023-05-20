@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.StudentMapper">
+
+
+<!--    id属性是这个查询操作的唯一标识符，Java代码中可以通过这个名称来调用该查询。
+        例如，在上述Java接口中定义一个名为listStuRoleVo的方法，
+        它的注解为@Select("xmlListStuRoleVo")时，就可以使用该方法执行该查询。-->
+    <select id="xmlListStuRoleVo"
+            resultMap="com.example.demo.entity.StuRoleVo">
+<!--    resultType属性指定了该查询返回的结果类型，即将查询结果映射为Java对象后的类型。
+        属性的值应该是这个Java对象的全限定类名，
+        可以使任何一个可以直接映射的类型，比如Java基本类型、JavaBean等。-->
+
+<!--        SELECT sid,sname,roleid,rolename,roledist,-->
+<!--        `status` from student,stu_role,role WHERE-->
+<!--        sid=stu_id and roleid=stu_role.role_id-->
+        SELECT sid,sname,roleid,rolename,roledist
+        from student
+        LEFT JOIN role
+        on sid=roleid
+
+    </select>
+</mapper>

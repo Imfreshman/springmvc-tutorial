@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除</title>
+</head>
+<body style="text-align: center">
+
+
+            <br><br><br><br><br><br><br><br>
+            <p style="font-size: 32px;">确定删除吗？<br><br>
+<!--                <button type="button" ><a type="button" href="'/student/delete/?sid='+${student.sid}}" style="font-size: 32px;">确定</a></button>-->
+                <button type="button">
+                    <a type="button" th:href="@{'/student/delete/' + ${student.sid}}" style="font-size: 32px;">确定</a>
+                </button>
+                <button type="button" ><a type="button" href="/student/list" style="font-size: 32px;">取消</a></button>
+            </p>
+
+
+</body>
+</html>

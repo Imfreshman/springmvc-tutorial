@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>注册的页面</title>
+</head>
+<body style="text-align:center">
+<div style="width:100%;height:20%">
+
+  <H2>欢迎使用信息管理系统</H2>
+</div>
+<div style="width:100%;height:20%">
+  <form action="/student/stuRegislogin" method="post">
+    用户名:<input type="text" name="sname"> <br>
+    密码:<input type="password" name="password"><br>
+    再次确认密码:<input type="password" name="surepassword"><br>
+    <input type="submit" value="提交"><br>
+    <span th:text="${erorr}"></span>
+  </form>
+</div>
+</body>
+</html>

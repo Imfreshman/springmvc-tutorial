@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body style="text-align: center">
+
+<!--表单，action提交数据，默认为get方法-->
+<form action="/student/delete" method="get">
+  id:< type="text" name="sid" th:value="${student.sid}"> <br>
+  name:<input type="text" name="sname" th:value="${student.sname}"> <br>
+  sex:<input type="radio" name="ssex"  th:value="${student.ssex}" value="1"${student.ssex=="1"?'checked'}> 男 <input type="radio" name="ssex" value="0"${student.ssex=="0"?'checked'}>女 <br>
+  age:<input type="text" name="sage" th:value="${student.sage}"> <br>
+  village:<input type="text" name="svillage" th:value="${student.svillage}"> <br>
+  remark:<input type="text" name="remark" th:value="${student.remark}"> <br>
+  <input type="submit">
+</form>
+
+
+</body>
+</html>
